@@ -125,16 +125,11 @@
     <link href="https://shi-yh.github.io/undefined/14200c38.html"/>
     <id>https://shi-yh.github.io/undefined/14200c38.html</id>
     <published>2020-07-28T06:20:51.000Z</published>
-    <updated>2021-03-01T15:54:24.810Z</updated>
+    <updated>2021-03-06T03:42:28.075Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html"></summary>
-        
-      
+    <summary type="html">&lt;h2 id=&quot;起因&quot;&gt;&lt;a href=&quot;#起因&quot; class=&quot;headerlink&quot; title=&quot;起因&quot;&gt;&lt;/a&gt;起因&lt;/h2&gt;&lt;p&gt;最近在工作中尝试使用IL作为项目热更方案，但是使用IL后，游戏中大部分的类都不能再继承Mono，也就是无法使用协程。&lt;/p&gt;
+&lt;p&gt;尽管有一个简单的方案是，从主项目中传递一个MonoBehavior给热更项目作为总协程，但是和使用主项目的Update执行热更Update的方法一样，这样调用总是会有相应的性能消耗的，所以尝试在热更项目中内置一个协程。&lt;/p&gt;</summary>
     
     
     

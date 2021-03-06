@@ -23,29 +23,12 @@
       </tags>
   </entry>
   <entry>
-    <title>多语言方案</title>
-    <url>/undefined/96bf7ba8.html</url>
-    <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>因为项目最开始的时候，资源管理不到位，所以很多资源在制作时都没有约定规范，这就导致了许多需要做多语言支持的资源分布在各个不同的部分，在后期支持多语言的时候十分痛苦，所以写了个小工具，用于一键提取非策划表中的文本（代码和预制体上的文本）。</p>
-<h2 id="定于多语言结构"><a href="#定于多语言结构" class="headerlink" title="定于多语言结构"></a>定于多语言结构</h2><p>参考现成主流的多语言方案，我打算使用如下结构来支持多语言。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/shi-yh/shiyh-imgs/images/20210225174953.png" alt="QQ图片20210225172729"></p>
-<p>语言包中的所有数据用字典进行存储，比如我们用1001（int作为key，需要多一层策划注释，但是自增索引不容易出错）或者Main_Logo（string作为key，少一层策划注释，但是想key的名字要想很久）作为主界面的logo的key，然后对应我们最终需要的Value。</p>
-<h2 id="提取代码中的文本"><a href="#提取代码中的文本" class="headerlink" title="提取代码中的文本"></a>提取代码中的文本</h2><p>在开发过程中，有一部分游戏中用到的提示文本是临时写在代码里的（这是一个很不好的习惯），如果要一个一个去找出来并且改成从文本库中提取，是一件需要大量重复劳动的事，所以我打算做一个提取替换的工具。</p>
-<p>先分析一下需求：</p>
-<ul>
-<li>找到代码中的所有包含【引号+中文+引号】的部分。</li>
-<li>将找到的部分提取到一个临时字典中，并生成一个value将此部分替换。</li>
-</ul>
-<p>首先我们来实现第一个需求，这时候就要用到正则表达式来提取。</p>
-]]></content>
-      <tags>
-        <tag>Unity</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Unity协程的原理和实现</title>
     <url>/undefined/14200c38.html</url>
     <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>最近在工作中尝试使用IL作为项目热更方案，但是使用IL后，游戏中大部分的类都不能再继承Mono，也就是无法使用协程。</p>
 <p>尽管有一个简单的方案是，从主项目中传递一个MonoBehavior给热更项目作为总协程，但是和使用主项目的Update执行热更Update的方法一样，这样调用总是会有相应的性能消耗的，所以尝试在热更项目中内置一个协程。</p>
+<span id="more"></span>
+
 <h2 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h2><p>先进行需求拆分，Unity的协程主要需要实现以下功能：</p>
 <ol>
 <li>当前帧代码逻辑仅执行到yield return 之前的语句。</li>
@@ -104,6 +87,41 @@
       </tags>
   </entry>
   <entry>
+    <title>多语言方案</title>
+    <url>/undefined/96bf7ba8.html</url>
+    <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>因为项目最开始的时候，资源管理不到位，所以很多资源在制作时都没有约定规范，这就导致了许多需要做多语言支持的资源分布在各个不同的部分，在后期支持多语言的时候十分痛苦，所以写了个小工具，用于一键提取非策划表中的文本（代码和预制体上的文本）。</p>
+<h2 id="定于多语言结构"><a href="#定于多语言结构" class="headerlink" title="定于多语言结构"></a>定于多语言结构</h2><p>参考现成主流的多语言方案，我打算使用如下结构来支持多语言。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/shi-yh/shiyh-imgs/images/20210225174953.png" alt="QQ图片20210225172729"></p>
+<p>语言包中的所有数据用字典进行存储，比如我们用1001（int作为key，需要多一层策划注释，但是自增索引不容易出错）或者Main_Logo（string作为key，少一层策划注释，但是想key的名字要想很久）作为主界面的logo的key，然后对应我们最终需要的Value。</p>
+<h2 id="提取代码中的文本"><a href="#提取代码中的文本" class="headerlink" title="提取代码中的文本"></a>提取代码中的文本</h2><p>在开发过程中，有一部分游戏中用到的提示文本是临时写在代码里的（这是一个很不好的习惯），如果要一个一个去找出来并且改成从文本库中提取，是一件需要大量重复劳动的事，所以我打算做一个提取替换的工具。</p>
+<p>先分析一下需求：</p>
+<ul>
+<li>找到代码中的所有包含【引号+中文+引号】的部分。</li>
+<li>将找到的部分提取到一个临时字典中，并生成一个value将此部分替换。</li>
+</ul>
+<p>首先我们来实现第一个需求，这时候就要用到正则表达式来提取。</p>
+]]></content>
+      <tags>
+        <tag>Unity</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何让NPC更为生动</title>
+    <url>/undefined/d5138eb8.html</url>
+    <content><![CDATA[<p>最近沉迷哈迪斯，哈迪斯里有个很有趣的功能是，你每次回到冥界神殿，NPC都会根据你当前的状况和你进行不同的对话。想实现一下NPC的个性化功能，一般的逻辑都是这么设计的：</p>
+<ul>
+<li>玩家身上有一个数据Data</li>
+<li>Npc身上有一个数据解析接口ReveiceData</li>
+<li>Npc身上有一个行为模式BehaviorData,由策划配置对各个数据的反馈。</li>
+</ul>
+<p>但是有一天，策划突然想到，我现在希望玩家角色在Npc身边，发送“二营长，你他娘的意大利炮呢？”文本气泡的时候，Npc能给出相应的反馈。</p>
+<p>啊这么简单的需求用神经网络嘛，超级好实现的【但是我不会，只能手动打爆策划狗头。</p>
+]]></content>
+      <tags>
+        <tag>Unity</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>委托是什么</title>
     <url>/undefined/1525fd0d.html</url>
     <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>这几天看到有Unity的面试题是问委托是什么，遂整理了一下自己的想法。</p>
@@ -148,22 +166,6 @@
 ]]></content>
       <tags>
         <tag>Unity C#</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>如何让NPC更为生动</title>
-    <url>/undefined/d5138eb8.html</url>
-    <content><![CDATA[<p>最近沉迷哈迪斯，哈迪斯里有个很有趣的功能是，你每次回到冥界神殿，NPC都会根据你当前的状况和你进行不同的对话。想实现一下NPC的个性化功能，一般的逻辑都是这么设计的：</p>
-<ul>
-<li>玩家身上有一个数据Data</li>
-<li>Npc身上有一个数据解析接口ReveiceData</li>
-<li>Npc身上有一个行为模式BehaviorData,由策划配置对各个数据的反馈。</li>
-</ul>
-<p>但是有一天，策划突然想到，我现在希望玩家角色在Npc身边，发送“二营长，你他娘的意大利炮呢？”文本气泡的时候，Npc能给出相应的反馈。</p>
-<p>啊这么简单的需求用神经网络嘛，超级好实现的【但是我不会，只能手动打爆策划狗头。</p>
-]]></content>
-      <tags>
-        <tag>Unity</tag>
       </tags>
   </entry>
   <entry>
