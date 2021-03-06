@@ -90,6 +90,8 @@
     <title>多语言方案</title>
     <url>/undefined/96bf7ba8.html</url>
     <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>因为项目最开始的时候，资源管理不到位，所以很多资源在制作时都没有约定规范，这就导致了许多需要做多语言支持的资源分布在不同的地方，使得在后期支持多语言的时候十分痛苦。本文主要是记录一下这段痛苦的过程，也给各位同样开始时不规范的小伙伴们指条歪路~</p>
+<span id="more"></span>
+
 <h2 id="定于多语言结构"><a href="#定于多语言结构" class="headerlink" title="定于多语言结构"></a>定于多语言结构</h2><p>参考现成主流的多语言方案，我打算使用如下结构来支持多语言。</p>
 <p><img data-src="https://cdn.jsdelivr.net/gh/shi-yh/shiyh-imgs/images/20210225174953.png"></p>
 <p>语言包中的所有数据用字典进行存储，比如我们用1001（int作为key，需要多一层策划注释，但是自增索引不容易出错）或者Main_Logo（string作为key，少一层策划注释，但是想key的名字要想很久）作为主界面的logo的key，然后对应我们最终需要的Value。</p>
